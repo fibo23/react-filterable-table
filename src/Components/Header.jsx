@@ -1,5 +1,6 @@
 ﻿import React from 'react';
-import ExactFilters from './ExactFilters'; 
+import ExactFilters from './ExactFilters';
+import {Row, Col, FormGroup, Label, Card, CardBody, Input, InputGroup, InputGroupAddon, InputGroupText} from 'reactstrap'; 
 
 class Header extends React.Component {
 	constructor(props) {
@@ -40,48 +41,40 @@ class Header extends React.Component {
 		);
 
 		let perPageSelect = this.props.pagersVisible !== false && this.props.pageSizes && this.props.pageSizes.length > 0
-			?  <select className="form-control pull-sm-right pull-md-right pull-lg-right" onChange={updatePageSize} value={this.props.pageSize}>
+			?  <Input bsSize="sm" type="select" className="form-control input-sm" onChange={updatePageSize} value={this.props.pageSize}>
 					{this.props.pageSizes.map((p, i) =>
-						<option value={p} key={i}>{p} per page</option>
+						<option value={p} key={i}>{p} items</option>
 					)}
-				</select>
+				</Input>
 			: null;
 
 		return (
-			<div>
-				{this.props.children}
-				{this.props.upperHeaderChildren}
-				<div className="row header-row">
-					<div className="col-sm-3 filter-container">
-						<span className="filter-container">
-							<input type="text" className="form-control filter-input" value={filter} onChange={this.filterChanged} ref="filter" placeholder="Filter" autoFocus={this.props.autofocusFilter} />
-							<span className="close clear-filter" onClick={() => this.filterChanged('')}>
-								&times;
-							</span>
-						</span>
-					</div>
-					<div className="col-sm-5 col-sm-push-4">
-						{perPageSelect}
-					</div>
-					<div className="col-sm-4 col-sm-pull-4 text-center text-muted record-count">
-						{loading || recordCountMessage}
-					</div>
-				</div>
-				{this.props.lowerHeaderChildren}
-				<div className="row header-row">
-					<div className="col-sm-8">
-						<ExactFilters
-							exactFilters={this.props.exactFilters}
-							removeExactFilter={this.props.removeExactFilter}
-							/>
-					</div>
-					<div className="col-sm-4 hidden-xs">
-						{this.props.pager}
-					</div>
-				</div>
-			</div>
+			<Row>
+	          <Col xs="12" sm="6" md="4">
+	            <Card className="filter-card">
+	              <FormGroup row>
+	                <Col sm="6">
+	                  {perPageSelect}
+	                </Col>
+	              </FormGroup>
+	            </Card>
+	          </Col>
+	          <Col xs="12" sm="6" md="4">
+	            <Card className="filter-card">
+	            </Card>
+	          </Col>
+	          <Col xs="12" sm="6" md="4">
+	            <Card className="filter-card">
+	              <FormGroup row>
+	                <Col sm="12">
+				        <Input type="text" bsSize="sm" className="input-sm form-control" value={filter} onChange={this.filterChanged} ref="filter" placeholder="Search" autoFocus={this.props.autofocusFilter} />
+	                </Col>
+	              </FormGroup>
+	            </Card>
+	          </Col>
+	        </Row>
 		);
 	}
 }
 
-module.exports = Header;
+export default Header;

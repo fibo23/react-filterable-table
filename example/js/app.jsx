@@ -1,5 +1,5 @@
-const ReactDOM = require('react-dom');
-const FilterableTable = require('../../src/Components/FilterableTable.jsx');
+import ReactDOM from 'react-dom';
+import FilterableTable from '../../src/Components/FilterableTable.jsx';
 
 let data = [
 	{ name: "Steve", age: 27, job: "Sandwich Eater" },

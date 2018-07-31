@@ -1,2 +1,7 @@
 node_modules/
 npm-debug.log
+yarn.lock
+example/js/bootstrap.min.css
+example/js/font-awesome.min.css
+example/js/react.production.min.js
+example/js/react-dom.production.min.js
