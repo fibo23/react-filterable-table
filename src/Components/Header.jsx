@@ -68,7 +68,7 @@ class Header extends React.Component {
 	              <FormGroup row>
 	                <Col sm="12"> 
 				        <InputGroup>
-				            <input className="form-control py-2 border-right-0 border" type="search" value={filter} id="filter-input" onChange={this.filterChanged} ref="filter" placeholder="Search" autoFocus={this.props.autofocusFilter} />
+				            <input className="form-control py-2 border-right-0 border" bsSize="sm" type="search" value={filter} id="filter-input" onChange={this.filterChanged} ref="filter" placeholder="Search" autoFocus={this.props.autofocusFilter} />
 				            <span className="input-group-append">
 				                <div className="input-group-text bg-transparent">
 				                	<i className="fa fa-search"></i>

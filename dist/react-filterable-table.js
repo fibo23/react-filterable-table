@@ -861,7 +861,7 @@ return /******/ (function(modules) { // webpackBootstrap
 									_react2.default.createElement(
 										_reactstrap.InputGroup,
 										null,
-										_react2.default.createElement('input', { className: 'form-control py-2 border-right-0 border', type: 'search', value: filter, id: 'filter-input', onChange: this.filterChanged, ref: 'filter', placeholder: 'Search', autoFocus: this.props.autofocusFilter }),
+										_react2.default.createElement('input', { className: 'form-control py-2 border-right-0 border', bsSize: 'sm', type: 'search', value: filter, id: 'filter-input', onChange: this.filterChanged, ref: 'filter', placeholder: 'Search', autoFocus: this.props.autofocusFilter }),
 										_react2.default.createElement(
 											'span',
 											{ className: 'input-group-append' },
