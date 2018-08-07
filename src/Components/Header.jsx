@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import ExactFilters from './ExactFilters';
-import {Row, Col, FormGroup, Label, Card, CardBody, Input, InputGroup, InputGroupAddon, InputGroupText} from 'reactstrap'; 
+import {Row, Col, FormGroup, Label, Card, CardBody, Input, InputGroup, InputGroupAddon, InputGroupText} from 'reactstrap';
 
 class Header extends React.Component {
 	constructor(props) {
@@ -59,15 +59,22 @@ class Header extends React.Component {
 	              </FormGroup>
 	            </Card>
 	          </Col>
-	          <Col xs="12" sm="6" md="4">
+	          <Col xs="12" sm="4" md="4">
 	            <Card className="filter-card">
 	            </Card>
 	          </Col>
 	          <Col xs="12" sm="6" md="4">
 	            <Card className="filter-card">
 	              <FormGroup row>
-	                <Col sm="12">
-				        <Input type="text" bsSize="sm" className="input-sm form-control" value={filter} onChange={this.filterChanged} ref="filter" placeholder="Search" autoFocus={this.props.autofocusFilter} />
+	                <Col sm="12"> 
+				        <InputGroup>
+				            <input className="form-control py-2 border-right-0 border" type="search" value={filter} id="filter-input" onChange={this.filterChanged} ref="filter" placeholder="Search" autoFocus={this.props.autofocusFilter} />
+				            <span className="input-group-append">
+				                <div className="input-group-text bg-transparent">
+				                	<i className="fa fa-search"></i>
+				                </div>
+				            </span>
+				        </InputGroup>
 	                </Col>
 	              </FormGroup>
 	            </Card>
